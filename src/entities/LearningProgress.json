@@ -1,0 +1,53 @@
+{
+  "name": "LearningProgress",
+  "type": "object",
+  "properties": {
+    "module_id": {
+      "type": "string",
+      "description": "Unique identifier for the learning module"
+    },
+    "module_title": {
+      "type": "string",
+      "description": "Title of the learning module"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "fundamentals",
+        "components",
+        "patterns",
+        "advanced",
+        "case_studies"
+      ],
+      "description": "Module category"
+    },
+    "completion_status": {
+      "type": "string",
+      "enum": ["not_started", "in_progress", "completed"],
+      "default": "not_started",
+      "description": "Current completion status"
+    },
+    "progress_percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 0,
+      "description": "Progress percentage (0-100)"
+    },
+    "time_spent_minutes": {
+      "type": "number",
+      "default": 0,
+      "description": "Total time spent on this module in minutes"
+    },
+    "last_accessed": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last time this module was accessed"
+    },
+    "notes": {
+      "type": "string",
+      "description": "User's personal notes for this module"
+    }
+  },
+  "required": ["module_id", "module_title", "category"]
+}
